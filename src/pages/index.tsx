@@ -3,6 +3,8 @@ import { LoginStatus, UserInfo } from "@bitkub-chain/sdk.js";
 import { sdk } from "./_app";
 
 export default function Home() {
+  const testFunction = async () => {};
+
   const [status, setStatus] = useState(LoginStatus.NOT_CONNECTED);
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
@@ -29,8 +31,6 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
-
-  const testFunction = () => {};
 
   if (status === LoginStatus.CONNECTED) {
     return (
