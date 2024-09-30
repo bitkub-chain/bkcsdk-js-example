@@ -101,9 +101,9 @@ const sendCustomTx = async () => {
   // ##############################################################################
 
   const sendTxResult2 = await sdk.sendCustomTx(
-    "0x1F750EB90B60fDE7775f71C1F718AF77c5dF5b33",
+    "0x927245dc945ed4247936dBf5663B021906d21c67",
     "mySDKMethod1(address var1_,uint256 var2_,string memory var3_,address bitkubNext_)",
-    ["0x1F750EB90B60fDE7775f71C1F718AF77c5dF5b33", "1234", "tmpString"]
+    ["0x927245dc945ed4247936dBf5663B021906d21c67", "1234", "tmpString"]
   );
   console.log(sendTxResult2);
 
@@ -120,7 +120,7 @@ const sendCustomTx = async () => {
     ]
   );
   const sendTxResult3 = await sdk.sendCustomTx(
-    "0x1F750EB90B60fDE7775f71C1F718AF77c5dF5b33",
+    "0x927245dc945ed4247936dBf5663B021906d21c67",
     "mySDKMethod2(bytes memory abiEncodedAddressArr_,address bitkubNext_)",
     [res]
   );
