@@ -76,6 +76,14 @@ const approve721 = async () => {
   );
 };
 
+const getAllowanceToken = async () => {
+  console.log(await sdk.getAllowanceToken("KAP20_ADDRESS_HERE"));
+};
+
+const getIsApprovedNFT = async () => {
+  console.log(await sdk.getIsApprovedNFT("KAP721_ADDRESS_HERE"));
+};
+
 const transfer = async () => {
   console.log(await sdk.transferNative("TO_ADDRESS_HERE", 1));
 
@@ -101,9 +109,9 @@ const sendCustomTx = async () => {
   // ##############################################################################
 
   const sendTxResult2 = await sdk.sendCustomTx(
-    "0x927245dc945ed4247936dBf5663B021906d21c67",
+    "0x22ad051F88C5FDe4f64f74D050d2175617A423EB",
     "mySDKMethod1(address var1_,uint256 var2_,string memory var3_,address bitkubNext_)",
-    ["0x927245dc945ed4247936dBf5663B021906d21c67", "1234", "tmpString"]
+    ["0x22ad051F88C5FDe4f64f74D050d2175617A423EB", "1234", "tmpString"]
   );
   console.log(sendTxResult2);
 
@@ -120,11 +128,38 @@ const sendCustomTx = async () => {
     ]
   );
   const sendTxResult3 = await sdk.sendCustomTx(
-    "0x927245dc945ed4247936dBf5663B021906d21c67",
+    "0x22ad051F88C5FDe4f64f74D050d2175617A423EB",
     "mySDKMethod2(bytes memory abiEncodedAddressArr_,address bitkubNext_)",
     [res]
   );
   console.log(sendTxResult3);
+
+  // ##############################################################################
+
+  const sendTxResult4 = await sdk.sendCustomTx(
+    "0x22ad051F88C5FDe4f64f74D050d2175617A423EB",
+    "mySDKMethod3(address target_, uint256 a_, address)",
+    ["TARGET_ADDRESS_HERE", "123"]
+  );
+  console.log(sendTxResult4);
+
+  // ##############################################################################
+
+  const sendTxResult5 = await sdk.sendCustomTx(
+    "0x22ad051F88C5FDe4f64f74D050d2175617A423EB",
+    "mySDKMethod4(address tokenAddr_, address recipient_, uint256 amount_, address bitkubNext_)",
+    ["KAP20_ADDRESS_HERE", "TO_ADDRESS_HERE", "AMOUNT_HERE"]
+  );
+  console.log(sendTxResult5);
+
+  // ##############################################################################
+
+  const sendTxResult6 = await sdk.sendCustomTx(
+    "0x22ad051F88C5FDe4f64f74D050d2175617A423EB",
+    "mySDKMethod5(address tokenAddr_, address recipient_, uint256 tokenId_, address bitkubNext_)",
+    ["KAP721_ADDRESS_HERE", "TO_ADDRESS_HERE", "TOKEN_ID_HERE"]
+  );
+  console.log(sendTxResult6);
 };
 
 export const getTransactionDetails = async (queueID: string) => {
